@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-12">
+        <div class="container"> 
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Full name</label>
+                        <input type="text"  [disabled]="loggedUserId !=0" [(ngModel)]="userObj.fulName"  class="form-control" id="validationCustom01" value="Mark" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="validationCustomUsername" class="form-label">Email</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+                            <input type="text" [disabled]="loggedUserId !=0"  [(ngModel)]="userObj.emailId" class="form-control" id="validationCustomUsername"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Please choose a Email.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">Mobile No</label>
+                        <input type="text" [disabled]="loggedUserId !=0"  [(ngModel)]="userObj.mobileNo" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">City</label>
+                        <input type="text" [disabled]="loggedUserId !=0"  [(ngModel)]="userObj.city" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">Password</label>
+                        <input type="text" [disabled]="loggedUserId !=0"  [(ngModel)]="userObj.password" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label">Address Line 1</label>
+                        <textarea name=""  [disabled]="loggedUserId !=0" [(ngModel)]="userObj.addressLine1" class="form-control"></textarea>
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label">Address Line 2</label>
+                        <textarea name=""  [disabled]="loggedUserId !=0" [(ngModel)]="userObj.addressLine2" class="form-control"></textarea>
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div> 
+                </div>
+                <div class="row">
+                     <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label">Profile Pic Url</label>
+                        <textarea name="" [disabled]="loggedUserId ==0"  [(ngModel)]="userObj.profilePicUrl" class="form-control"></textarea>
+                         
+                    </div> 
+                    <div class="col-6">
+                        <img [src]="userObj.profilePicUrl" alt="">
+                    </div>
+                </div>
+                <div class="col-12 pt-3">
+                    @if (userObj.userId ==0  ) {
+                        <button class="btn btn-primary" type="button" (click)="onSave()">Create User</button>
+                    } @else { 
+                        <button class="btn btn-warning" type="button" (click)="onUpdate()">Update Profile Pic</button>
+                    }
+                   
+                </div> 
+        </div>
+    </div>
+</div>
